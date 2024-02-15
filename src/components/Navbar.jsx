@@ -64,7 +64,7 @@ const Navbar = () => {
 
         {/* Menu Links */}
         {isOpen && (
-          <div className="py-auto absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-8  bg-black text-4xl text-white">
+          <div className="py-auto absolute left-0 top-0 z-20 flex h-screen w-screen flex-col items-center justify-center  gap-8 bg-black text-4xl text-white">
             {links.map((link) => (
               <Link href={link.url} key={link.title}>
                 {link.title}
