@@ -18,5 +18,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// bg-gradient-to-b from-blue-50 to-red-100

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Homepage = () => {
   return (
     <motion.div
-      className="h-screen"
+      className="h-full overflow-scroll"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
@@ -42,7 +42,7 @@ const Homepage = () => {
             <button className="rounded-lg bg-black p-4 text-white ring-1 ring-black">
               View My Work
             </button>
-            <button className="rounded-lg p-4 ring-1 ring-black">
+            <button className="rounded-lg p-4 ring-1 ring-black transition-all duration-150 hover:bg-white">
               Contact Me
             </button>
           </div>
