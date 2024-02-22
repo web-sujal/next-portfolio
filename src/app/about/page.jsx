@@ -41,22 +41,19 @@ const AboutPage = () => {
       {/* Container */}
       <div className="scrollbar flex h-full overflow-scroll" ref={containerRef}>
         {/* Text Container */}
-        <div className="l:p-48 flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 xl:w-1/2 xl:gap-64">
+        <div className="l:p-48 flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 xl:w-1/2 xl:gap-52">
           {/* Biography */}
           <div className="flex flex-col justify-center gap-12">
             {/* Title */}
             <h1 className="text-2xl font-bold">Biography</h1>
             {/* Description */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore,
-              eius error veniam esse quod officia voluptatem dolor, odit
-              commodi, vel ea recusandae reprehenderit. Tempore consectetur
-              aperiam praesentium cum?
+              {
+                "Hey, I'm Sujal, an aspiring web developer with a knack for crafting intuitive digital experiences. Proficient in the MERN stack and always hungry to learn more. Let's collaborate and create something amazing!"
+              }
             </p>
             {/* Quote */}
-            <span className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </span>
+            <span className="italic">Dream it. Code it. Live it.</span>
 
             {/* SCROLL SVG */}
             <motion.svg
