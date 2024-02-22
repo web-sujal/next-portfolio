@@ -43,7 +43,7 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="flex h-full flex-col overflow-scroll px-4 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
+      <div className="scrollbar flex h-full flex-col overflow-scroll px-4 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
         {/* Text Container */}
         <div className="flex h-1/2 items-center justify-center text-6xl lg:h-full lg:w-1/2">
           <div>

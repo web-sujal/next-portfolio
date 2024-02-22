@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* customised scrollbar */
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply rounded-md bg-red-100;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-red-300;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-red-400;
+  }
+}
+
+/* blob animation */
+
+@keyframes morphBlob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.blob {
+  /* width: 200px;
+  height: 200px; */
+  background-color: #fff;
+  box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+  animation: morphBlob 8s ease-in-out infinite 1s;
+}
+
+/* linear animation for magnetic effect in navbar */
 @layer base {
   :root {
     --elastic-out: linear(

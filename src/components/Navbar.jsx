@@ -157,10 +157,10 @@ const Navbar = () => {
 
         {/* social account links */}
         <div className="hidden flex-1 justify-end gap-4 md:flex">
-          <Link href="#">
+          <Link href="https://github.com/web-sujal">
             <Image src="/github.png" alt="github" width={24} height={24} />
           </Link>
-          <Link href="#">
+          <Link href="https://www.instagram.com/s.ujal_rajput">
             <Image
               src="/instagram.png"
               alt="instagram"
@@ -168,7 +168,7 @@ const Navbar = () => {
               height={24}
             />
           </Link>
-          <Link href="#">
+          <Link href="https://www.linkedin.com/in/web-sujal">
             <Image src="/linkedin.png" alt="linkedin" width={24} height={24} />
           </Link>
         </div>

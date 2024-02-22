@@ -39,10 +39,7 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* Container */}
-      <div
-        className="flex h-full overflow-scroll [&::-webkit-scrollbar]:w-2"
-        ref={containerRef}
-      >
+      <div className="scrollbar flex h-full overflow-scroll" ref={containerRef}>
         {/* Text Container */}
         <div className="l:p-48 flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 xl:w-1/2 xl:gap-64">
           {/* Biography */}

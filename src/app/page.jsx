@@ -2,22 +2,23 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Homepage = () => {
   return (
     <motion.div
-      className="h-full overflow-scroll"
+      className="scrollbar h-full overflow-scroll"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="mx-4 mt-10 flex h-full flex-col sm:mx-8 md:mx-12 lg:mx-20 lg:flex-row xl:mx-48">
+      <div className="mx-4 mt-10 flex h-full flex-col gap-4 sm:mx-8 md:mx-12 lg:mx-20 lg:mt-16 lg:flex-row xl:mx-48 xl:mt-10">
         {/* Image Container */}
-        <div className="relative min-h-[50%] flex-1 pb-6 lg:h-full lg:pb-0">
+        <div className="relative mx-auto flex h-[300px] min-h-[50%] w-[300px] flex-1 items-center justify-center pb-6 md:h-[500px] md:w-[500px] lg:h-full lg:flex-1 lg:pb-0">
           <Image
-            src="/hero.png"
+            src="/img.png"
             alt="hero image"
-            className="object-contain"
+            className="blob object-contain p-2"
             fill
           />
         </div>
@@ -39,12 +40,18 @@ const Homepage = () => {
 
           {/* Buttons */}
           <div className="flex w-full gap-4 pb-12">
-            <button className="rounded-lg bg-black p-4 text-white ring-1 ring-black">
+            <Link
+              href="/portfolio"
+              className="rounded-lg bg-black p-4 text-white ring-1 ring-black"
+            >
               View My Work
-            </button>
-            <button className="rounded-lg p-4 ring-1 ring-black transition-all duration-150 hover:bg-white">
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-lg p-4 ring-1 ring-black transition-all duration-150 hover:bg-white"
+            >
               Contact Me
-            </button>
+            </Link>
           </div>
         </div>
       </div>
