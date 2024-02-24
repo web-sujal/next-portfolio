@@ -95,7 +95,6 @@ const Navbar = () => {
     const yRange = mapRange(0, bounds.height, -1, 1)(relativeY);
     x.set(xRange * 10);
     y.set(yRange * 10);
-    console.log(xRange);
   };
 
   return (
@@ -157,10 +156,18 @@ const Navbar = () => {
 
         {/* social account links */}
         <div className="hidden flex-1 justify-end gap-4 md:flex">
-          <Link href="https://github.com/web-sujal">
+          <Link
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/web-sujal"
+          >
             <Image src="/github.png" alt="github" width={24} height={24} />
           </Link>
-          <Link href="https://www.instagram.com/s.ujal_rajput">
+          <Link
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.instagram.com/s.ujal_rajput"
+          >
             <Image
               src="/instagram.png"
               alt="instagram"
@@ -168,7 +175,11 @@ const Navbar = () => {
               height={24}
             />
           </Link>
-          <Link href="https://www.linkedin.com/in/web-sujal">
+          <Link
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/web-sujal"
+          >
             <Image src="/linkedin.png" alt="linkedin" width={24} height={24} />
           </Link>
         </div>
