@@ -100,20 +100,24 @@ const AboutPage = () => {
             </motion.h1>
 
             {/* Skill List */}
-            <motion.div
-              initial={{ x: "-300px" }}
-              animate={isSkillRefInView ? { x: 0 } : {}}
+            <div
+              // initial={{ y: 100, opacity: 0, scale: 0.9 }}
+              // whileInView={{ y: 0, opacity: 1, scale: 1 }}
+              // transition={{ duration: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              {skillList.map((skill) => (
-                <div
+              {skillList.map((skill, index) => (
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.05 * index }}
                   key={skill}
                   className="cursor-pointer rounded bg-black p-2 text-sm text-white transition-all duration-150 hover:bg-white hover:text-black"
                 >
                   {skill}
-                </div>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Experience */}
