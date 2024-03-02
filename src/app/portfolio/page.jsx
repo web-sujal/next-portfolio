@@ -1,5 +1,6 @@
 "use client";
 
+import HireMe from "@/components/HireMe";
 import { LampContainer } from "@/components/ui/lamp";
 import useMediaQuery from "@/utils/useMediaQuery";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
@@ -146,6 +147,9 @@ const PortfolioPage = () => {
             <Single item={item} key={item.id} />
           ))}
         </div>
+
+        {/* Hire Me */}
+        <HireMe />
       </div>
     </motion.div>
   );
