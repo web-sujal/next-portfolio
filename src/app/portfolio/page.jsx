@@ -1,51 +1,105 @@
 "use client";
 
 import { LampContainer } from "@/components/ui/lamp";
-import { motion, useScroll, useTransform } from "framer-motion";
+import useMediaQuery from "@/utils/useMediaQuery";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 
 const items = [
   {
     id: 1,
-    color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Snapgram",
+    desc: " Your vibrant social hub! React.js and TypeScript bring it to life. Instant login, easy post creation, likes, saves, and endless exploration. Click profiles, connect, and shine!. Share what's on your mind in a snap. Join Snapgram now!",
+    img: "https://images.pexels.com/photos/5053835/pexels-photo-5053835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    link: "https://your-snapgram.netlify.app",
   },
   {
     id: 2,
-    color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "TodoMate",
+    desc: "Your ultimate task companion! Enjoy effortless todo creation, and tagging. Access your todos from any platform. Stay organized, wherever you are, with TodoMate!",
+    img: "https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    link: "https://app-todomate.netlify.app",
   },
   {
     id: 3,
-    color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Vartalapp",
+    desc: "Minimalistic chatting app to keep you connected with your loved ones. Real-time chat like WhatsApp, photo sharing etc. Connect effortlessly with Vartalapp!",
+    img: "https://images.pexels.com/photos/7148671/pexels-photo-7148671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    link: "https://vartalapp.netlify.app/",
   },
   {
     id: 4,
-    color: "from-purple-300 to-red-300",
-    title: "Spotify Music App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "https://lama.dev",
+    title: "Next Music",
+    desc: "Your music haven! Enjoy endless tunes, curated playlists, and easy searching. Just press play and feel the rhythm with this amazing app.",
+    img: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    link: "#",
   },
 ];
 
+const Single = ({ item }) => {
+  const isMobileScreens = useMediaQuery("(max-width: 640px)");
+
+  const ref = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+
+  return (
+    <section className="flex h-screen w-full items-center justify-center bg-slate-900 text-white">
+      <div className="container flex flex-col items-center justify-center gap-6 overflow-hidden md:flex-row md:gap-12">
+        <div className="flex flex-1 justify-end">
+          <Image
+            ref={ref}
+            src={item.img}
+            alt={item.title}
+            width={isMobileScreens ? 300 : 500}
+            height={isMobileScreens ? 300 : 500}
+            className="block rounded-md object-contain md:object-cover"
+          />
+        </div>
+
+        {/* Text */}
+        <motion.div
+          style={isMobileScreens ? {} : { y }}
+          className="px:10 flex flex-1 flex-col items-center justify-center gap-4 overflow-hidden text-center md:items-start md:px-6 md:text-left"
+        >
+          <h2 className="text-3xl md:text-7xl">{item.title}</h2>
+          <p className="max-w-md text-xs text-gray-500 md:text-sm">
+            {item.desc}
+          </p>
+          <button>
+            <a
+              href={item.link}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="font-white w-[200px] cursor-pointer rounded-md border-none bg-rose-700 py-2 text-center"
+            >
+              See Demo
+            </a>
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const PortfolioPage = () => {
   const ref = useRef();
-  const { scrollYProgress } = useScroll({ target: ref });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   return (
     <motion.div
@@ -54,7 +108,8 @@ const PortfolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[600vh]" ref={ref}>
+      <div className="relative h-full">
+        {/* lamp */}
         <LampContainer className="h-[calc(100vh-6rem)] overflow-x-hidden rounded-none">
           <motion.h1
             initial={{ opacity: 0.5, y: 100 }}
@@ -70,62 +125,21 @@ const PortfolioPage = () => {
           </motion.h1>
         </LampContainer>
 
-        <div className="sticky top-0 flex h-screen items-center gap-4 overflow-hidden">
-          <motion.div style={{ x }} className="flex">
-            <div className="flex h-screen w-[67vw] items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
-            {items.map((item) => (
-              <div
-                className={`flex h-screen w-screen items-center justify-center bg-gradient-to-r ${item.color}`}
-                key={item.id}
-              >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
-                    {item.title}
-                  </h1>
-                  <div className="relative h-80 w-56 md:h-64 md:w-96 lg:h-[350px] lg:w-[500px] xl:h-[420px] xl:w-[600px]">
-                    <Image src={item.img} alt={item.title} fill />
-                  </div>
-                  <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">
-                    {item.desc}
-                  </p>
-                  <Link href={item.link}>
-                    <button className="md:text-md m-4 rounded bg-white p-2 text-sm font-semibold text-gray-600 md:p-4 lg:p-8 lg:text-lg">
-                      See Demo
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-16 text-center">
-        <h1 className="mt-8 text-8xl">Do you have a project?</h1>
-        <div className="relative">
-          <motion.svg
-            animate={{ rotate: 360 }}
-            transition={{ ease: "linear", duration: 8, repeat: Infinity }}
-            viewBox="0 0 300 300"
-            className="h-64 w-64 md:h-[500px] md:w-[500px]"
-          >
-            <defs>
-              <path
-                id="circlePath"
-                d="M 150, 150 m -60, 0 a 60, 60 0 0, 1 120, 0 a 60, 60 0 0, 1 -120, 0"
-              />
-            </defs>
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
-                Front-end Developer
-              </textPath>
-            </text>
-          </motion.svg>
-          <Link
-            href="/contact"
-            className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-black text-white md:h-28 md:w-28"
-          >
-            Hire Me
-          </Link>
+        {/* projects section */}
+        <div className="h-[400vh] w-full" ref={ref}>
+          {/* progress */}
+          <div className="sticky left-0 top-0 bg-slate-950 pt-12 text-center text-4xl font-extrabold text-rose-600">
+            <h1>Featured Works</h1>
+            <motion.div
+              style={{ scaleX }}
+              className="h-1.5 rounded-full bg-white"
+            />
+          </div>
+
+          {/* single projects */}
+          {items.map((item) => (
+            <Single item={item} key={item.id} />
+          ))}
         </div>
       </div>
     </motion.div>

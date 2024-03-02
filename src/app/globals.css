@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* css reset */
+/* base styles */
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: center;
+}
 
 * {
   margin: 0;
