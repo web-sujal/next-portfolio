@@ -1,5 +1,6 @@
 "use client";
 
+import { LampContainer } from "@/components/ui/lamp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,9 +55,23 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh]" ref={ref}>
-        <div className="flex h-[calc(100vh-6rem)] w-screen items-center justify-center text-center text-8xl">
+        <LampContainer className="h-[calc(100vh-6rem)] overflow-x-hidden rounded-none">
+          <motion.h1
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="mt-8 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+          >
+            MY WORKS
+          </motion.h1>
+        </LampContainer>
+        {/* <div className="flex h-[calc(100vh-6rem)] w-screen items-center justify-center text-center text-8xl">
           MY WORKS
-        </div>
+        </div> */}
 
         <div className="sticky top-0 flex h-screen items-center gap-4 overflow-hidden">
           <motion.div style={{ x }} className="flex">

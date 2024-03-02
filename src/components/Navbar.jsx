@@ -98,7 +98,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex h-full items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+    <div
+      className={`flex h-full items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ${pathName === "/portfolio" ? "bg-slate-950 text-white" : ""}`}
+    >
       <AnimatePresence>
         {/* Links */}
         <ul className="hidden flex-1 justify-start gap-4 md:flex">
@@ -114,7 +116,7 @@ const Navbar = () => {
                   const item = event.currentTarget;
                   setTransform(item, event, x, y);
                 }}
-                key={link.path}
+                key={link.title}
                 onPointerLeave={() => {
                   x.set(0);
                   y.set(0);
@@ -123,7 +125,7 @@ const Navbar = () => {
               >
                 <MotionLink
                   className={`relative rounded-md px-4 py-2 text-sm font-medium transition-all duration-500 ease-out
-                    ${pathName === link.url ? "bg-black text-white" : ""}`}
+                    ${pathName === link.url ? (pathName === "/portfolio" ? "bg-zinc-900 text-white" : "bg-black text-white") : ""}`}
                   href={link.url}
                 >
                   <motion.span
@@ -136,19 +138,18 @@ const Navbar = () => {
               </motion.li>
             );
           })}
-          {/* {links.map((link) => (
-          <NavLink link={link} key={link.title} />
-        ))} */}
         </ul>
 
         {/* Logo */}
         <div className="md:hidden md:flex-1 md:justify-center lg:flex">
           <Link
             href="/"
-            className="flex items-center justify-center rounded-md bg-black p-1 text-sm font-semibold"
+            className={`flex items-center justify-center rounded-md p-1 text-sm font-semibold ${pathName === "/portfolio" ? "bg-zinc-900" : "bg-black"}`}
           >
             <span className="mx-2 text-white">Sujal</span>
-            <span className="flex h-8 w-12 items-center justify-center rounded bg-white text-black">
+            <span
+              className={`flex h-8 w-12 items-center justify-center rounded bg-white text-black`}
+            >
               .dev
             </span>
           </Link>
@@ -161,7 +162,13 @@ const Navbar = () => {
             target="_blank"
             href="https://github.com/web-sujal"
           >
-            <Image src="/github.png" alt="github" width={24} height={24} />
+            <Image
+              src="/github.png"
+              className={pathName === "/portfolio" && "invert filter"}
+              alt="github"
+              width={24}
+              height={24}
+            />
           </Link>
           <Link
             rel="noopener noreferrer"
@@ -189,22 +196,22 @@ const Navbar = () => {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="relative z-50 flex h-8 w-10 flex-col items-center justify-between gap-2"
+            className={`relative z-50 flex h-8 w-10 flex-col items-center justify-between gap-2`}
           >
             <motion.div
               variants={topVariants}
               animate={isOpen ? "opened" : "closed"}
-              className="h-1 w-10 origin-left rounded bg-black"
+              className={`h-1 w-10 origin-left rounded ${pathName === "/portfolio" ? "bg-white" : ""} bg-black `}
             ></motion.div>
             <motion.div
               variants={centerVariants}
               animate={isOpen ? "opened" : "closed"}
-              className="h-1 w-10 origin-left rounded bg-black"
+              className={`h-1 w-10 origin-left rounded ${pathName === "/portfolio" ? "bg-white" : ""} bg-black`}
             ></motion.div>
             <motion.div
               variants={bottomVariants}
               animate={isOpen ? "opened" : "closed"}
-              className="h-1 w-10 origin-left rounded bg-black"
+              className={`h-1 w-10 origin-left rounded ${pathName === "/portfolio" ? "bg-white" : ""} bg-black`}
             ></motion.div>
           </button>
 
@@ -220,7 +227,7 @@ const Navbar = () => {
                 <motion.div
                   variants={listItemVariants}
                   className=""
-                  key={link.title}
+                  key={link.url}
                 >
                   <Link href={link.url}>{link.title}</Link>
                 </motion.div>
