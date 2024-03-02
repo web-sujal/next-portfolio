@@ -64,7 +64,7 @@ const PortfolioPage = () => {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className="mt-8 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text py-4 text-center text-8xl font-medium tracking-tight text-transparent md:text-7xl"
+            className="mt-3 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text py-4 text-center text-8xl font-medium tracking-tight text-transparent md:text-7xl"
           >
             MY WORKS
           </motion.h1>

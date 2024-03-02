@@ -16,8 +16,11 @@ export const LampContainer = ({ children, className }) => {
     >
       <div className="relative isolate z-0 flex w-full flex-1 scale-y-125 items-center justify-center ">
         <motion.div
-          initial={{ opacity: 0.5, width: isMobileScreens ? "10" : "15rem" }}
-          whileInView={{ opacity: 1, width: isMobileScreens ? "20" : "30rem" }}
+          initial={{ opacity: 0.5, width: isMobileScreens ? "5rem" : "15rem" }}
+          whileInView={{
+            opacity: 1,
+            width: isMobileScreens ? "10rem" : "30rem",
+          }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -32,8 +35,11 @@ export const LampContainer = ({ children, className }) => {
           <div className="absolute  bottom-0 left-0 z-20 h-[100%]  w-40 bg-slate-950 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: isMobileScreens ? "5rem" : "15rem" }}
+          whileInView={{
+            opacity: 1,
+            width: isMobileScreens ? "10rem" : "30rem",
+          }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -61,8 +67,8 @@ export const LampContainer = ({ children, className }) => {
           className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-rose-400 blur-2xl"
         ></motion.div>
         <motion.div
-          initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
+          initial={{ width: isMobileScreens ? "5rem" : "15rem" }}
+          whileInView={{ width: isMobileScreens ? "10rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
