@@ -102,7 +102,7 @@ export default Homepage;
   // TODO: 
   background gradient on project cards
   background beams - portfolio or home
-  lamp effect - MY WORKS
+  lamp effect - MY WORKS                        -----done-----
   Grid and Dot backgrounds
 
   button:

@@ -45,7 +45,7 @@ const ContactPage = () => {
     >
       <div className="scrollbar flex h-full flex-col overflow-scroll px-4 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
         {/* Text Container */}
-        <div className="flex h-1/2 items-center justify-center text-6xl lg:h-full lg:w-1/2">
+        <div className="flex min-h-[calc(40vh)] items-center justify-center text-4xl md:text-6xl lg:h-full lg:w-1/2">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -61,7 +61,7 @@ const ContactPage = () => {
                 {letter}
               </motion.span>
             ))}
-            😊
+            🖐️
           </div>
         </div>
 
@@ -69,7 +69,7 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={formRef}
-          className="flex h-1/2 flex-col justify-center gap-6 rounded-xl bg-red-50 p-24 text-xl lg:h-full lg:w-1/2"
+          className="flex min-h-[calc(60vh)] w-full flex-col justify-center gap-6 rounded-md bg-rose-50 p-6 text-xl lg:h-full lg:w-1/2"
         >
           <span>Dear Sujal,</span>
           <textarea
@@ -84,7 +84,11 @@ const ContactPage = () => {
             className="border-b-2 border-black bg-transparent outline-none"
           />
           <span>Regards</span>
-          <button className="rounded bg-purple-200 p-4 font-semibold text-gray-600">
+          <button
+            className={
+              "animate-shimmer inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            }
+          >
             Send
           </button>
           {success && (
