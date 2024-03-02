@@ -49,11 +49,11 @@ const AboutPage = () => {
             {/* Description */}
             <p className="text-lg">
               {
-                "Hey, I'm Sujal, an aspiring web developer with a knack for crafting intuitive digital experiences. Proficient in the MERN stack and always hungry to learn more. Let's collaborate and create something amazing!"
+                "Hi there! I'm Sujal, a passionate web developer dedicated to creating seamless digital experiences. With expertise in the MERN stack and a constant thirst for knowledge, I'm excited to collaborate and bring ideas to life. Let's build something incredible together!"
               }
             </p>
             {/* Quote */}
-            <span className="italic">Dream it. Code it. Live it.</span>
+            <span className="italic">{"Dream it. Code it. Live it. </>"}</span>
 
             {/* SCROLL SVG */}
             <motion.svg
