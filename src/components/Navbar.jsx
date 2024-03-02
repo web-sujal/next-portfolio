@@ -98,7 +98,7 @@ const Navbar = () => {
   };
 
   return (
-    <div
+    <section
       className={`flex h-full items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ${pathName === "/portfolio" ? "bg-slate-950 text-white" : ""}`}
     >
       <AnimatePresence>
@@ -236,7 +236,7 @@ const Navbar = () => {
           )}
         </div>
       </AnimatePresence>
-    </div>
+    </section>
   );
 };
 

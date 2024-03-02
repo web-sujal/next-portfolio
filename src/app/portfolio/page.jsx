@@ -4,7 +4,7 @@ import { LampContainer } from "@/components/ui/lamp";
 import useMediaQuery from "@/utils/useMediaQuery";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const items = [
   {
@@ -59,7 +59,7 @@ const Single = ({ item }) => {
             alt={item.title}
             width={isMobileScreens ? 300 : 500}
             height={isMobileScreens ? 300 : 500}
-            className="block rounded-md object-contain md:object-cover"
+            className="rounded-md object-contain md:object-cover"
           />
         </div>
 
@@ -100,6 +100,11 @@ const PortfolioPage = () => {
     stiffness: 100,
     damping: 30,
   });
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <motion.div
