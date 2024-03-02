@@ -51,7 +51,7 @@ const Single = ({ item }) => {
 
   return (
     <section className="flex h-screen w-full items-center justify-center bg-slate-900 text-white">
-      <div className="container flex flex-col items-center justify-center gap-6 overflow-hidden md:flex-row md:gap-12">
+      <div className="container flex flex-col items-center justify-center gap-6 overflow-hidden md:flex-row lg:gap-12">
         <div className="flex flex-1 justify-end">
           <Image
             ref={ref}
@@ -59,16 +59,16 @@ const Single = ({ item }) => {
             alt={item.title}
             width={isMobileScreens ? 300 : 500}
             height={isMobileScreens ? 300 : 500}
-            className="rounded-md object-contain md:object-cover"
+            className="rounded-md object-contain pl-4 md:object-cover"
           />
         </div>
 
         {/* Text */}
         <motion.div
           style={isMobileScreens ? {} : { y }}
-          className="px:10 flex flex-1 flex-col items-center justify-center gap-4 overflow-hidden text-center md:items-start md:px-6 md:text-left"
+          className="flex flex-1 flex-col items-center justify-center gap-4 overflow-hidden px-10 text-center md:items-start md:px-4 md:text-left lg:px-6"
         >
-          <h2 className="text-3xl md:text-7xl">{item.title}</h2>
+          <h2 className="text-3xl md:text-5xl lg:text-7xl">{item.title}</h2>
           <p className="max-w-md text-xs text-gray-500 md:text-sm">
             {item.desc}
           </p>

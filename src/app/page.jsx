@@ -61,7 +61,7 @@ const Homepage = () => {
         </div>
 
         {/* Text Container */}
-        <div className="flex flex-1 flex-col items-center justify-center gap-5 pb-10 pt-4 lg:pt-0">
+        <div className="flex flex-1 flex-col items-center justify-center gap-5 pb-20 pt-4 lg:pb-10 lg:pt-0">
           {/* Title */}
           <h1 className="text-4xl font-bold md:text-6xl">
             Crafting Digital Experiences, Designing Tomorrow.
