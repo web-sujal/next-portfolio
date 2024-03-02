@@ -43,7 +43,7 @@ const AboutPage = () => {
         {/* Text Container */}
         <div className="l:p-48 flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 xl:w-1/2 xl:gap-52">
           {/* Biography */}
-          <div className="flex min-h-[calc(100vh-6rem)] flex-col justify-center gap-12">
+          <div className="flex min-h-[calc(100vh-6rem)] -translate-y-14 transform flex-col justify-center gap-8">
             {/* Title */}
             <h1 className="text-2xl font-bold">Biography</h1>
             {/* Description */}

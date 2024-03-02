@@ -19,7 +19,7 @@ export const LampContainer = ({ children, className }) => {
           initial={{ opacity: 0.5, width: isMobileScreens ? "5rem" : "15rem" }}
           whileInView={{
             opacity: 1,
-            width: isMobileScreens ? "10rem" : "30rem",
+            width: isMobileScreens ? "15rem" : "30rem",
           }}
           transition={{
             delay: 0.3,
@@ -38,7 +38,7 @@ export const LampContainer = ({ children, className }) => {
           initial={{ opacity: 0.5, width: isMobileScreens ? "5rem" : "15rem" }}
           whileInView={{
             opacity: 1,
-            width: isMobileScreens ? "10rem" : "30rem",
+            width: isMobileScreens ? "15rem" : "30rem",
           }}
           transition={{
             delay: 0.3,
@@ -68,7 +68,7 @@ export const LampContainer = ({ children, className }) => {
         ></motion.div>
         <motion.div
           initial={{ width: isMobileScreens ? "5rem" : "15rem" }}
-          whileInView={{ width: isMobileScreens ? "10rem" : "30rem" }}
+          whileInView={{ width: isMobileScreens ? "15rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
