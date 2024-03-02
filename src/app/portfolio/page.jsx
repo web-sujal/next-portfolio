@@ -64,14 +64,11 @@ const PortfolioPage = () => {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className="mt-8 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+            className="mt-8 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text py-4 text-center text-8xl font-medium tracking-tight text-transparent md:text-7xl"
           >
             MY WORKS
           </motion.h1>
         </LampContainer>
-        {/* <div className="flex h-[calc(100vh-6rem)] w-screen items-center justify-center text-center text-8xl">
-          MY WORKS
-        </div> */}
 
         <div className="sticky top-0 flex h-screen items-center gap-4 overflow-hidden">
           <motion.div style={{ x }} className="flex">

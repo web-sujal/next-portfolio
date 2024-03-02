@@ -2,8 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import useMediaQuery from "@/utils/useMediaQuery";
 
 export const LampContainer = ({ children, className }) => {
+  const isMobileScreens = useMediaQuery("(max-width: 640px)");
+
   return (
     <div
       className={cn(
@@ -13,8 +16,8 @@ export const LampContainer = ({ children, className }) => {
     >
       <div className="relative isolate z-0 flex w-full flex-1 scale-y-125 items-center justify-center ">
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: isMobileScreens ? "10" : "15rem" }}
+          whileInView={{ opacity: 1, width: isMobileScreens ? "20" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
