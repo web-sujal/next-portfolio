@@ -58,6 +58,7 @@ const Single = ({ item }) => {
             ref={ref}
             src={item.img}
             alt={item.title}
+            unoptimized
             width={isMobileScreens ? 300 : 500}
             height={isMobileScreens ? 300 : 500}
             className="rounded-md object-contain pl-4 md:object-cover"
@@ -92,6 +93,8 @@ const Single = ({ item }) => {
 const PortfolioPage = () => {
   const text = "Ready to Collaborate?";
   const ref = useRef();
+
+  const MotionLink = motion(Link);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -135,7 +138,7 @@ const PortfolioPage = () => {
         {/* projects section */}
         <div className="h-[400vh] w-full" ref={ref}>
           {/* progress */}
-          <div className="sticky left-0 top-0 bg-slate-950 pt-12 text-center text-4xl font-extrabold text-rose-600">
+          <div className="sticky left-0 top-0 bg-slate-950 pt-8 text-center text-4xl font-extrabold text-rose-600">
             <h1>Featured Works</h1>
             <motion.div
               style={{ scaleX }}
@@ -165,12 +168,15 @@ const PortfolioPage = () => {
               </motion.span>
             ))}
           </div>
-          <Link
+          <MotionLink
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
             href="/contact"
-            className=" z-20 inline-block -translate-y-10 transform cursor-pointer rounded-lg border-none bg-rose-800 px-5 py-2 text-white outline-none ring-1 ring-rose-600 ring-offset-1 transition duration-150 hover:-translate-y-1.5 hover:scale-105 hover:bg-rose-700"
+            className="z-20 inline-block -translate-y-10 transform cursor-pointer rounded-lg border-none bg-rose-800 px-5 py-2 text-white outline-none ring-1 ring-rose-600 ring-offset-1 hover:bg-rose-700"
           >
             Hire Me
-          </Link>
+          </MotionLink>
         </section>
       </div>
     </motion.div>
