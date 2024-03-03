@@ -1,10 +1,10 @@
 "use client";
 
-import HireMe from "@/components/HireMe";
 import { LampContainer } from "@/components/ui/lamp";
 import useMediaQuery from "@/utils/useMediaQuery";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const items = [
@@ -90,6 +90,7 @@ const Single = ({ item }) => {
 };
 
 const PortfolioPage = () => {
+  const text = "Ready to Collaborate?";
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -149,7 +150,28 @@ const PortfolioPage = () => {
         </div>
 
         {/* Hire Me */}
-        <HireMe />
+        <section className="mx-auto flex h-[80vh] flex-col items-center justify-center gap-6 bg-slate-900 text-center text-white">
+          <div>
+            {text.split(" ").map((text, index) => (
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                // viewport={{ once: true }}
+                transition={{ duration: 2, delay: index * 0.1 }}
+                key={index}
+                className="mx-auto -translate-y-10 transform px-4 text-center text-4xl font-extrabold"
+              >
+                {text}{" "}
+              </motion.span>
+            ))}
+          </div>
+          <Link
+            href="/contact"
+            className=" z-20 inline-block -translate-y-10 transform cursor-pointer rounded-lg border-none bg-rose-800 px-5 py-2 text-white outline-none ring-1 ring-rose-600 ring-offset-1 transition duration-150 hover:-translate-y-1.5 hover:scale-105 hover:bg-rose-700"
+          >
+            Hire Me
+          </Link>
+        </section>
       </div>
     </motion.div>
   );
