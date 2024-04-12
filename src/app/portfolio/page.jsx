@@ -10,31 +10,31 @@ import { useEffect, useRef } from "react";
 const items = [
   {
     id: 1,
+    title: "Spotify Clone",
+    desc: "A captivating web platform inspired by Spotify, crafted for immersive music streaming experiences.",
+    img: "https://github.com/web-sujal/spotify-clone/blob/main/public/images/spotify-logo.jpg?raw=true",
+    link: "https://web-sujal-spotify-clone.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Snapgram",
     desc: " Your vibrant social hub! React.js and TypeScript bring it to life. Instant login, easy post creation, likes, saves, and endless exploration. Click profiles, connect, and shine!. Share what's on your mind in a snap. Join Snapgram now!",
     img: "https://images.pexels.com/photos/5053835/pexels-photo-5053835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "https://your-snapgram.netlify.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "TodoMate",
     desc: "Your ultimate task companion! Enjoy effortless todo creation, and tagging. Access your todos from any platform. Stay organized, wherever you are, with TodoMate!",
     img: "https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "https://app-todomate.netlify.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Vartalapp",
     desc: "Minimalistic chatting app to keep you connected with your loved ones. Real-time chat like WhatsApp, photo sharing etc. Connect effortlessly with Vartalapp!",
     img: "https://images.pexels.com/photos/7148671/pexels-photo-7148671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "https://vartalapp.netlify.app/",
-  },
-  {
-    id: 4,
-    title: "Next Music",
-    desc: "Your music haven! Enjoy endless tunes, curated playlists, and easy searching. Just press play and feel the rhythm with this amazing app.",
-    img: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "#",
   },
 ];
 
