@@ -40,6 +40,11 @@ section {
   }
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 /* blob animation */
 
 @keyframes morphBlob {
